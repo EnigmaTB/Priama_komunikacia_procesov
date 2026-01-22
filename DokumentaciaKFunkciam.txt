@@ -1,0 +1,24 @@
+void com_initialize(int nr_proc, int *rank)
+{
+}
+com_initialize() alocuje zdielanu anonimnu pamať. Vytvara nr_proc kopíi procesu, prideluje každému procesu ho index, nastavuje ich mailboxy.
+
+void com_finalize()
+{
+}
+com_finalize() ukončuje všetky procesy, uvolňuje pamať.
+
+void com_recv(void **message, size_t *size)
+{
+}
+com_recv() prečita deskriptor zo svoho mailboxu a prerobi ho na smernik. Vrati smernik na spravu v pamati.
+
+void com_send(int rank, void *message, size_t size)
+{
+}
+com_send() dostane smernik a rozmer spravy, prerobi ich na deskriptor a prida deskriptor do mailboxu procesu, ktorého rang je rank.
+
+void com_mcast(void *message, size_t size)
+{
+}
+com_mcast() pracuje iste ako com_send(), ale posle deskriptor všetkym procesam okrem seba.
